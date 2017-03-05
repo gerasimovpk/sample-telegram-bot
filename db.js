@@ -16,7 +16,11 @@ var messageSchema = new mongoose.Schema({
         name: String,
         id: Number
     },
-    message: String,
+    message: {
+        chat_id: String,
+        id: String,
+        text: String
+    },
     timestamp: String
 });
 
@@ -27,6 +31,10 @@ return module.exports = {
         Message.find({}).exec(function (err, result) {
             cb(result);
         })
+    },
+
+    clearLogs(cb) {
+        Message.remove({}, cb);
     },
 
     addLog(user, message) {

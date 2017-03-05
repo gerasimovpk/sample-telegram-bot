@@ -17,12 +17,21 @@ bot.onText(/^(.+)$/, function (msg, match) {
     db.addLog({
         name: msg.from.first_name,
         id: msg.from.id
-    }, match[1])
+    }, {
+        chat_id: msg.chat.id,
+        id: msg.message_id,
+        text: match[1]
+    })
     bot.sendMessage(msg.chat.id, 'Logged successfully!')
 });
 bot.onText(/^\/get_logs$/, function (msg, match) {
     db.getLogs((res) => {
-        bot.sendMessage(msg.chat.id, JSON.stringify(res));
+        res.map(el => bot.forwardMessage(msg.chat.id, el.chat_id, el.id))
+    });
+});
+bot.onText(/^\/clear_logs$/, function (msg, match) {
+    db.clearLogs((res) => {
+        bot.sendMessage(msg.chat.id, 'Cleared successfully!')
     });
 });
 
