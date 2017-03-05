@@ -34,6 +34,6 @@ return module.exports = {
             user: user,
             message: message,
             timestamp: new Date().toISOString()
-        })
+        }).save(function (err) {if (err) console.log ('Error on save!')});
     }
 }
