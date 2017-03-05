@@ -2,7 +2,7 @@
 
 
 
-require('./db');
+var db = require('./db');
 
 var token = '330844015:AAHwmV2429xiAd95EmpaVWecEz3AYERb02Q';
 
@@ -14,25 +14,29 @@ var interval;
 console.log('bot server started...');
 
 bot.onText(/^(.+)$/, function (msg, match) {
-    addLog({
+    db.addLog({
         name: msg.from.first_name,
         id: msg.from.id
     }, match[1])
     bot.sendMessage(msg.chat.id, 'Logged successfully!')
 });
-
-bot.onText(/^\/say_hello$/, function (msg, match) {
-    console.log('bot on say_hello$');
-    bot.sendMessage(msg.chat.id, 'Hello dear friend!!!').then(function () {
-        // reply sent!
-    });
-});
 bot.onText(/^\/get_logs$/, function (msg, match) {
-    getLogs((res) => {
+    db.getLogs((res) => {
         bot.sendMessage(msg.chat.id, JSON.stringify(res));
     });
 });
+
+
 /*
+
+
+ bot.onText(/^\/say_hello$/, function (msg, match) {
+ console.log('bot on say_hello$');
+ bot.sendMessage(msg.chat.id, 'Hello dear friend!!!').then(function () {
+ // reply sent!
+ });
+ });
+
 bot.onText(/^\/send_cake$/, function (msg, match) {
     console.log('bot on send_cake$');
     bot.sendPhoto(msg.chat.id, 'https://pp.userapi.com/c837328/v837328893/12b0a/_Lp_Tt3-Zxk.jpg', {caption: 'Крутой торт, заказывай! /want_it'});
@@ -78,5 +82,6 @@ bot.onText(/^\/cancel$/, function (msg, match) {
     bot.sendMessage(msg.chat.id, 'OK!').then(function () {
         clearInterval(interval);
     });
-*/
 });
+
+ */

@@ -25,13 +25,13 @@ var Message = mongoose.model('Messages', messageSchema);
 function getLogs(cb) {
     Message.find({}).exec(function(err, result) {
         cb(result);
-    }
+    })
 }
 
 function addLog(user, message) {
-    let message = new Message({
+    dbmsg = new Message({
         user: user,
         message: message,
-        timestamp: new Date().toISOString();
+        timestamp: new Date().toISOString()
     })
 }
