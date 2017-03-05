@@ -41,7 +41,9 @@ bot.onText(/^\/want_it/, function (msg, match) {
             request_location: true
         }],["Cancel"]]  }
     };
-    bot.sendMessage(msg.chat.id, "*Some* message here.", option);
+    bot.sendMessage(msg.chat.id, "*Some* message here.", option).then(function (reply) {
+        bot.sendMessage(msg.chat.id, JSON.stringify(reply);
+    });
 
 
     bot.sendMessage(msg.chat.id, 'Супер,' + msg.from.first_name + ', я перезвоню тебе!').then(function () {
