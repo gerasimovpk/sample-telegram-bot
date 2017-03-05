@@ -28,10 +28,10 @@ bot.onText(/^\/get_logs$/, function (msg, match) {
     db.getLogs((res) => {
         res
             .sort((a,b)=>new Date(a.timestamp).getTime()>new Date(b.timestamp).getTime())
-            .map(el => {
+            .map( (el,idx) => {
                 //bot.sendMessage(msg.chat.id, 'Current element: ' + JSON.stringify(el))
                 console.log(el.message.text);
-                bot.forwardMessage(msg.chat.id, el.message.chat_id, el.message.id)
+                setTimeout(()=>bot.forwardMessage(msg.chat.id, el.message.chat_id, el.message.id),idx*100)
             })
     });
 });
