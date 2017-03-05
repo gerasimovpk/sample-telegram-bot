@@ -42,7 +42,7 @@ bot.onText(/^\/want_it/, function (msg, match) {
         }],["Cancel"]]  }
     };
     bot.sendMessage(msg.chat.id, "*Some* message here.", option).then(function (reply) {
-        bot.sendMessage(msg.chat.id, JSON.stringify(reply);
+        bot.sendMessage(msg.chat.id, JSON.stringify(reply));
     });
 
 
