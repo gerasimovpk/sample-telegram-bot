@@ -33,7 +33,13 @@ bot.onText(/^\/want_it/, function (msg, match) {
 
     var option = {
         "parse_mode": "Markdown",
-        "reply_markup": {  "keyboard": [["Yes"],["No"]]  }
+        "reply_markup": {  "keyboard": [[{
+            text: "My phone number",
+            request_contact: true
+        }],[{
+            text: "My location",
+            request_location: true
+        }],["Cancel"]]  }
     };
     bot.sendMessage(msg.chat.id, "*Some* message here.", option);
 
