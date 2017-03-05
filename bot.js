@@ -28,7 +28,7 @@ bot.onText(/^\/send_cake$/, function (msg, match) {
     bot.sendPhoto(msg.chat.id, 'https://pp.userapi.com/c837328/v837328893/12b0a/_Lp_Tt3-Zxk.jpg', {caption: 'Крутой торт, заказывай! /want_it'});
 });
 bot.onText(/^\/want_it/, function (msg, match) {
-    bot.sendMessage(msg.chat.id, 'Супер,' + msg.user_id.first_name + ', я перезвоню тебе!').then(function () {
+    bot.sendMessage(msg.chat.id, 'Супер,' + msg.from.first_name + ', я перезвоню тебе!').then(function () {
         // reply sent!
     });
 });
