@@ -9,17 +9,26 @@ var interval;
 
 console.log('bot server started...');
 
-bot.onText(/^(.+)$/, function (msg, match) {
-    console.log('bot on text');
-    var name = match[1];
-    bot.sendMessage(msg.chat.id, 'You said: ' + name + '!').then(function () {
-        // reply sent!
-    });
-});
+// bot.onText(/^(.+)$/, function (msg, match) {
+//     console.log('bot on text');
+//     var name = match[1];
+//     bot.sendMessage(msg.chat.id, 'You said: ' + name + '!').then(function () {
+//         // reply sent!
+//     });
+// });
 
 bot.onText(/^\/say_hello$/, function (msg, match) {
     console.log('bot on say_hello$');
     bot.sendMessage(msg.chat.id, 'Hello dear friend!!!').then(function () {
+        // reply sent!
+    });
+});
+bot.onText(/^\/send_cake$/, function (msg, match) {
+    console.log('bot on send_cake$');
+    bot.sendPhoto(chatId, 'https://pp.userapi.com/c837328/v837328893/12b0a/_Lp_Tt3-Zxk.jpg', {caption: 'Крутой торт, /заказывай!'});
+});
+bot.onText(/^\/заказывай$/, function (msg, match) {
+    bot.sendMessage(msg.chat.id, 'Супер! перезвоню тебе!').then(function () {
         // reply sent!
     });
 });
