@@ -25,10 +25,10 @@ bot.onText(/^\/say_hello$/, function (msg, match) {
 });
 bot.onText(/^\/send_cake$/, function (msg, match) {
     console.log('bot on send_cake$');
-    bot.sendPhoto(msg.chat.id, 'https://pp.userapi.com/c837328/v837328893/12b0a/_Lp_Tt3-Zxk.jpg', {caption: 'Крутой торт, /заказывай!'});
+    bot.sendPhoto(msg.chat.id, 'https://pp.userapi.com/c837328/v837328893/12b0a/_Lp_Tt3-Zxk.jpg', {caption: 'Крутой торт, заказывай! /want_it'});
 });
-bot.onText(/^\/заказывай$/, function (msg, match) {
-    bot.sendMessage(msg.chat.id, 'Супер! перезвоню тебе!').then(function () {
+bot.onText(/^\/want_it/, function (msg, match) {
+    bot.sendMessage(msg.chat.id, 'Супер,' + msg.user_id.first_name + ', я перезвоню тебе!').then(function () {
         // reply sent!
     });
 });
