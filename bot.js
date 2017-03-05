@@ -1,3 +1,6 @@
+'use strict';
+
+
 var token = '330844015:AAHwmV2429xiAd95EmpaVWecEz3AYERb02Q';
 
 var Bot = require('node-telegram-bot-api'),
