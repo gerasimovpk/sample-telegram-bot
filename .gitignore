@@ -10,3 +10,12 @@ npm-debug.log
 # Docker
 Dockerfile
 docker-compose.yml
+/.idea/modules.xml
+/.idea/node-js-getting-started.iml
+/.idea/workspace.xml
+/.idea/modules.xml
+/.idea/node-js-getting-started.iml
+/.idea/workspace.xml
+modules.xml
+node-js-getting-started.iml
+workspace.xml

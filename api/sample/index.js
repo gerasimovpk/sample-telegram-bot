@@ -1,3 +1,0 @@
-function getSampleHelloWorld() {
-    return "sampleHelloWorld"
-}
