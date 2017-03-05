@@ -13,7 +13,7 @@ var interval;
 
 console.log('bot server started...');
 
-bot.onText(/^\/echo$/, (msg, match) => {
+bot.onText(/^\/echo (.+)$/, (msg, match) => {
     bot.sendMessage(msg.chat.id, 'You said ' + match[1])
 });
 
