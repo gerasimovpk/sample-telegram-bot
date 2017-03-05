@@ -16,7 +16,7 @@ bot.onText(/^\/say_hello (.+)$/, function (msg, match) {
 bot.onText(/^(.+)$/, function (msg, match) {
     console.log('bot on text');
     var name = match[1];
-    bot.sendMessage(msg.chat.id, 'Hello ' + name + '!').then(function () {
+    bot.sendMessage(msg.chat.id, 'You said: ' + name + '!').then(function () {
         // reply sent!
     });
 });
