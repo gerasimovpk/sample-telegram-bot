@@ -1,8 +1,7 @@
 {
   "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "express", "static"],
+  "description": "Sample NodeJS Telegram bot with server-side logging deployed on Heroku",
+  "repository": "https://github.com/gerasimovpk/sample-telegram-bot",
+  "keywords": ["node", "express", "telegram"],
   "image": "heroku/nodejs"
 }

@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "sample-telegram-bot",
   "version": "0.2.5",
-  "description": "A sample Node.js app using Express 4",
+  "description": "Sample NodeJS Telegram bot with server-side logging deployed on Heroku",
   "engines": {
     "node": "6.9.4"
   },
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/gerasimovpk/sample-telegram-bot"
   },
   "keywords": [
     "node",
     "heroku",
-    "express"
+    "telegram"
   ],
   "license": "MIT"
 }
