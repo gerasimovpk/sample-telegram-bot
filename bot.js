@@ -1,5 +1,9 @@
 'use strict';
 
+
+
+require('./db');
+
 var token = '330844015:AAHwmV2429xiAd95EmpaVWecEz3AYERb02Q';
 
 var Bot = require('node-telegram-bot-api'),
@@ -10,11 +14,11 @@ var interval;
 console.log('bot server started...');
 
 bot.onText(/^(.+)$/, function (msg, match) {
-    console.log('bot on text');
-    var name = match[1];
-    bot.sendMessage(msg.chat.id, 'You said: ' + name + '!').then(function () {
-        // reply sent!
-    });
+    addLog({
+        name: msg.from.first_name,
+        msg.from.id
+    }, match[1]})
+    bot.sendMessage(msg.chat.id, 'Logged successfully!')
 });
 
 bot.onText(/^\/say_hello$/, function (msg, match) {
@@ -23,6 +27,12 @@ bot.onText(/^\/say_hello$/, function (msg, match) {
         // reply sent!
     });
 });
+bot.onText(/^\/get_logs$/, function (msg, match) {
+    getLogs((res) => {
+        bot.sendMessage(msg.chat.id, JSON.stringify(res));
+    });
+});
+/*
 bot.onText(/^\/send_cake$/, function (msg, match) {
     console.log('bot on send_cake$');
     bot.sendPhoto(msg.chat.id, 'https://pp.userapi.com/c837328/v837328893/12b0a/_Lp_Tt3-Zxk.jpg', {caption: 'Крутой торт, заказывай! /want_it'});
@@ -41,8 +51,8 @@ bot.onText(/^\/want_it/, function (msg, match) {
             request_location: true
         }],["Cancel"]]  }
     };
-    bot.sendMessage(msg.chat.id, "*Some* message here.", option).then(function (reply) {
-        bot.sendMessage(msg.chat.id, JSON.stringify(reply));
+    bot.sendMessage(msg.chat.id, "Куда можно звонить?", option).then(function (reply) {
+        //bot.getUpdates(msg.chat.id, JSON.stringify(reply));
     });
 
 
@@ -68,5 +78,5 @@ bot.onText(/^\/cancel$/, function (msg, match) {
     bot.sendMessage(msg.chat.id, 'OK!').then(function () {
         clearInterval(interval);
     });
-
+*/
 });
