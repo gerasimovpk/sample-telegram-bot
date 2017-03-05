@@ -27,7 +27,7 @@ bot.onText(/^(.+)$/, function (msg, match) {
 bot.onText(/^\/get_logs$/, function (msg, match) {
     db.getLogs((res) => {
         res.map(el => {
-            bot.sendMessage(msg.chat.id, 'Current element: ' + JSON.stringify(el))
+            //bot.sendMessage(msg.chat.id, 'Current element: ' + JSON.stringify(el))
             bot.forwardMessage(msg.chat.id, el.message.chat_id, el.message.id)
         })
     });
