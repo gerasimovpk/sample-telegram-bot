@@ -17,7 +17,7 @@ bot.onText(/^(.+)$/, function (msg, match) {
     addLog({
         name: msg.from.first_name,
         id: msg.from.id
-    }, match[1]})
+    }, match[1])
     bot.sendMessage(msg.chat.id, 'Logged successfully!')
 });
 
