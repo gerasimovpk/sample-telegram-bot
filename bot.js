@@ -13,6 +13,10 @@ var interval;
 
 console.log('bot server started...');
 
+bot.onText(/^\/echo$/, (msg, match) => {
+    bot.sendMessage(msg.chat.id, 'You said ' + match[1])
+});
+
 bot.onText(/^(.+)$/, function (msg, match) {
     db.addLog({
         name: msg.from.first_name,
@@ -22,7 +26,7 @@ bot.onText(/^(.+)$/, function (msg, match) {
         id: msg.message_id,
         text: match[1]
     })
-    bot.sendMessage(msg.chat.id, 'Logged successfully!')
+    //bot.sendMessage(msg.chat.id, 'Logged successfully!')
 });
 bot.onText(/^\/get_logs$/, function (msg, match) {
     db.getLogs((res) => {
