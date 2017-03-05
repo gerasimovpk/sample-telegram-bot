@@ -16,7 +16,7 @@ console.log('bot server started...');
 bot.onText(/^(.+)$/, function (msg, match) {
     addLog({
         name: msg.from.first_name,
-        msg.from.id
+        id: msg.from.id
     }, match[1]})
     bot.sendMessage(msg.chat.id, 'Logged successfully!')
 });
