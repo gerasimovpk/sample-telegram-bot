@@ -27,7 +27,7 @@ bot.onText(/^\/say_hello$/, function (msg, match) {
 bot.onText(/^\/subscribe$/, function (msg, match) {
     console.log('bot on subscribe');
     bot.sendMessage(msg.chat.id, 'OK!').then(function () {
-        let interval = setInterval(()=>{
+        interval = setInterval(()=>{
                 bot.sendMessage(msg.chat.id, 'Current time: '+ new Date().toDateString())
         }, 5000);
     });
