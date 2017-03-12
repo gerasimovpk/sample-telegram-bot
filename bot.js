@@ -54,7 +54,7 @@ bot.onText(/^\/clear_logs$/, function (msg, match) {
     ;
 });
 
-bot.onText(/^\/share_contact/, function (msg, match) {
+bot.onText(/^\/place_order/, function (msg, match) {
     //reply_markup = telegram.ReplyKeyboardMarkup([[telegram.KeyboardButton('Share contact', request_contact=True)]])
     //bot.sendMessage(CHAT_ID, 'Example', reply_markup=reply_markup)
 
