@@ -112,25 +112,6 @@ bot.onText(/^\/share_contact/, function (msg, match) {
  //reply_markup = telegram.ReplyKeyboardMarkup([[telegram.KeyboardButton('Share contact', request_contact=True)]])
  //bot.sendMessage(CHAT_ID, 'Example', reply_markup=reply_markup)
 
- var option = {
- "parse_mode": "Markdown",
- "reply_markup": {  "keyboard": [[{
- text: "My phone number",
- request_contact: true
- }],[{
- text: "My location",
- request_location: true
- }],["Cancel"]]  }
- };
- bot.sendMessage(msg.chat.id, "Куда можно звонить?", option).then(function (reply) {
- //bot.getUpdates(msg.chat.id, JSON.stringify(reply));
- });
-
-
- bot.sendMessage(msg.chat.id, 'Супер,' + msg.from.first_name + ', я перезвоню тебе!').then(function () {
- // reply sent!
- });
- });
 
 
 
