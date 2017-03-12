@@ -19,3 +19,4 @@ docker-compose.yml
 modules.xml
 node-js-getting-started.iml
 workspace.xml
+/.idea
